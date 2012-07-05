@@ -90,7 +90,7 @@ module SpreedlyCore
         instance_variable_set("@#{k}", v)
       end
       # errors may be nil, empty, a string, or an array of strings. 
-      @errors = if @errors.nil? || @errors["error"].blank?
+      @errors = if @errors.nil? || @errors["error"].to_s.empty?
                   []
                 elsif @errors["error"].is_a?(String)
                   [@errors["error"]]

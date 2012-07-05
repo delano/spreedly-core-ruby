@@ -32,7 +32,7 @@ module SpreedlyCore
       transaction = payment_method.redact
       assert transaction.succeeded?
       assert_equal "RedactPaymentMethod", transaction.transaction_type
-      assert !transaction.token.blank?
+      assert !transaction.token.to_s.empty?
       transaction
     end
   

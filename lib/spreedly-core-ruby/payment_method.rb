@@ -96,7 +96,7 @@ protected
       return if @has_been_validated
       @has_been_validated = true
       self.class.additional_required_cc_fields.each do |field|
-        if instance_variable_get("@#{field}").blank?
+        if instance_variable_get("@#{field}").to_s.empty?
           str_field= field.to_s
           friendly_name = if str_field.respond_to?(:humanize)
                             str_field.humanize
