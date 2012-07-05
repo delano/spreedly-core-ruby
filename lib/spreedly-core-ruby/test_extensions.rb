@@ -23,7 +23,8 @@ module SpreedlyCore
           :number => number,
           :verification_value => 123,
           :month => 4,
-          :year => Time.now.year + 1 }.merge(options[:credit_card] || {})
+          :year => Time.now.year + 1 }.merge(options[:credit_card] || {}),
+        :data => options[:data]
       }
     end
     
